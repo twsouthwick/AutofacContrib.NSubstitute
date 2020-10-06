@@ -24,7 +24,13 @@ namespace AutofacContrib.NSubstitute
             _builder = new ContainerBuilder();
             _options = new AutoSubstituteOptions();
         }
-       
+
+        public AutoSubstituteBuilder(DefaultAutoSubstituteBuilder defaultConfiguration)
+            : this()
+        {
+            defaultConfiguration.ConfigureBuilder(this);
+        }
+
         /// <summary>
         /// Creates a new instance that allows linking to the previous instance for derived builders.
         /// </summary>

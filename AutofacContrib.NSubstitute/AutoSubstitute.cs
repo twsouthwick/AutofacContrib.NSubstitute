@@ -10,10 +10,16 @@ namespace AutofacContrib.NSubstitute
     public class AutoSubstitute : IDisposable
     {
         /// <summary>
+        /// Gets the instance of <see cref="DefaultAutoSubstituteBuilder"/> that can be used to configure defaults for all
+        /// subsequent <see cref="AutoSubstitute"/> instances;
+        /// </summary>
+        public static DefaultAutoSubstituteBuilder Default { get; } = new DefaultAutoSubstituteBuilder();
+
+        /// <summary>
         /// Creates a builder to configure the mocks and dependencies.
         /// </summary>
         /// <returns>An instance of <see cref="AutoSubstituteBuilder"/>.</returns>
-        public static AutoSubstituteBuilder Configure() => new AutoSubstituteBuilder();
+        public static AutoSubstituteBuilder Configure() => new AutoSubstituteBuilder(Default);
 
         /// <summary>
         /// <see cref="IContainer"/> that handles the component resolution.
