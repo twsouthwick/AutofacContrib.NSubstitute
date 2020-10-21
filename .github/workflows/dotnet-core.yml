@@ -16,7 +16,7 @@ jobs:
     - name: Use GitVersion
       run: |
         dotnet tool install --global GitVersion.Tool --version 5.1.2
-        gitversion /output buildserver /nofetch
+        dotnet-gitversion /output buildserver /nofetch
     - name: Install dependencies
       run: dotnet restore --configuration Release
     - name: Build
