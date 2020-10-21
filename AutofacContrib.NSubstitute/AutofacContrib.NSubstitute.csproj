@@ -15,29 +15,9 @@
     <PackageTags>substitute mocking mocks nsubstitute autofac container dependency-injection di testing unit-testing TDD AAA auto-mock auto-substitute</PackageTags>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <InformationalVersion>$(GitVersion_InformationalVersion)</InformationalVersion>
-    <FileVersion>$(GitVersion_MajorMinorPatch)</FileVersion>
-    <AssemblyVersion>$(GitVersion_AssemblySemVer)</AssemblyVersion>
-    <Version>$(GitVersion_NuGetVersionV2)</Version>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <IncludeSymbols>true</IncludeSymbols>
-    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
-    <IncludeSymbols>true</IncludeSymbols>
-    <EmbedUntrackedSources>true</EmbedUntrackedSources>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-  </PropertyGroup>
-
-  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
-  </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Autofac" Version="5.2.0" />
     <PackageReference Include="NSubstitute" Version="4.2.2" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
