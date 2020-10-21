@@ -20,7 +20,7 @@ jobs:
         dotnet tool install --global GitVersion.Tool --version 5.3.7
         dotnet-gitversion /output buildserver /nofetch
     - name: Install dependencies
-      run: dotnet restore --configuration Release
+      run: dotnet restore
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
