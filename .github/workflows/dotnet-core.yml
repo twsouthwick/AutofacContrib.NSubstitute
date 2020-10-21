@@ -18,14 +18,14 @@ jobs:
     - name: Run GitVersion
       run: gitversion /output buildserver /nofetch
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore --configuration Release
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --no-restore --verbosity normal
+      run: dotnet test --configuration Release --no-restore --verbosity normal
     - name: Upload artifact
       uses: actions/upload-artifact@v2.2.0
       with:
         path: |
-          **/*.nupkg
-          **/*.snupkg
+          AutofacContrib.NSubstitute/bin/Release/*.nupkg
+          AutofacContrib.NSubstitute/bin/Release/*.snupkg
